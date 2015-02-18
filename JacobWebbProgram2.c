@@ -197,14 +197,15 @@ void keyboard(unsigned char key, int x, int y) {
       exit(1);//exit peacefully
    else if(key == '.')
       get_trippy = get_trippy * -1; //wut
-   else if(key == 'm') {
-      if(length_of_wire < 1); //do nothing
+   else if(key == 'm' && length_of_wire > 1) {
+      if(length_of_wire < 3)
+         length_of_wire = length_of_wire-0.1;
       else
          length_of_wire--;
    }
-   else if(key == 'n') {
-      if(length_of_wire > 12); //do nothing
-         //do nothing
+   else if(key == 'n' && length_of_wire < 12) {
+      if(length_of_wire > 7)
+         length_of_wire = length_of_wire+0.1;
       else
          length_of_wire++;
    }
